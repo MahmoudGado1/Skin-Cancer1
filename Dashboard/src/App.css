@@ -1,0 +1,809 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  font-family: "Montserrat", sans-serif;
+}
+body {
+  background: #0d6efd;
+}
+.container {
+  padding: 0 100px;
+}
+@media (max-width: 700px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+.loading {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #007bff; /* Bootstrap primary color */
+  padding: 20px;
+  margin-top: 100px;
+  animation: fadeIn 1s ease-in-out infinite alternate;
+}
+/* Fullscreen loading overlay */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.loading-overlay p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #0d6efd;
+}
+
+
+/* Optional: Add a subtle animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.page {
+  margin-left: 120px;
+  background: #e5e5e5;
+  padding: 40px;
+  height: 100vh;
+}
+@media (max-width: 1208px) {
+  .page {
+    margin-left: 0;
+    border-radius: 0;
+  }
+}
+@media (max-width: 485px) {
+  .page {
+    padding: 40px 20px;
+  }
+}
+@media (max-width: 460px) {
+  .logo {
+    width: 100%;
+  }
+}
+.form-title{
+  font-size: 1.75rem;
+  color: #111;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+.form-component {
+  padding-top: 40px;
+  padding-bottom: 60px;
+  min-height: 100vh;
+  background: #e5e5e5;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.form-component h2 {
+  color: gray;
+  letter-spacing: 4px;
+  margin-bottom: 30px;
+}
+.form-component h4 {
+  color: gray;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.form-component p {
+  max-width: 750px;
+  color: gray;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.form-component form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 550px;
+}
+.add-admin-form form {
+  width: 100%;
+}
+.form-component p:first-child {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0d6efd;
+  margin-top: 30px;
+}
+.form-component form div {
+  display: flex;
+  gap: 30px;
+}
+.form-component form input,
+.form-component form select,
+.form-component form textarea {
+  flex: 1;
+  font-size: 24px;
+  padding: 10px 10px 10px 40px;
+  border-radius: 7px;
+  border: 1px solid gray;
+}
+.form-component button {
+  padding: 10px 35px;
+  color: #fff;
+  font-weight: 700;
+  margin-top: 5px;
+  width: fit-content;
+  border: none;
+  border-radius: 8px;
+  font-size: 24px;
+  margin-bottom: 30px;
+  background: linear-gradient(140deg, #84a1f3, #0d6efd);
+  cursor: pointer;
+  transition: 0.3s;
+}
+.form-component button:hover{
+  transform: scale(1.03);
+}
+.form-component .wrapper {
+  display: flex;
+  gap: 50px;
+}
+.form-component .wrapper .banner {
+  flex: 1;
+}
+.form-component .wrapper .banner:last-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-component .wrapper .banner:last-child img {
+  max-width: 450px;
+}
+@media (max-width: 888px) {
+  .form-component {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .form-component form div {
+    flex-direction: column;
+  }
+}
+@media (max-width: 667px) {
+  .form-component form input,
+  .form-component form select,
+  .form-component form textarea {
+    font-size: 20px;
+    padding: 10px;
+  }
+}
+@media (max-width: 600px) {
+  .form-component form {
+    width: 100%;
+  }
+}
+@media (max-width: 485px) {
+  .add-admin-form {
+    padding: 30px 0;
+  }
+}
+.sidebar {
+  position: fixed;
+  width: 120px;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #0d6efd;
+  align-items: center;
+  color: #fff;
+  padding: 70px 0;
+}
+.sidebar svg {
+  width: 50px;
+  height: 50px;
+  font-size: 34px;
+}
+.sidebar svg:hover {
+  background: #fff;
+  color: #0d6efd;
+  border-radius: 8px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.sidebar .links {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.wrapper {
+  display: none;
+}
+.wrapper .hamburger {
+  display: none;
+}
+.sidebar .links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.icon {
+  font-size: 50px;
+  color: white;
+  padding: 5px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.icon:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.active {
+  background-color: white; 
+  color: #0d6efd;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+@media (max-width: 1208px) {
+  .sidebar {
+    background: #0d6efd;
+    left: -100%;
+    transition: 0.3s;
+  }
+  .show {
+    left: 0;
+    transition: 0.3s;
+  }
+  .wrapper {
+    display: block;
+    position: fixed;
+    top: 30px;
+    left: 40px;
+    font-size: 34px;
+    background: #0d6efd;
+    color: #fff;
+    height: 40px;
+    width: 40px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .wrapper .hamburger {
+    display: block;
+  }
+}
+@media (max-width: 485px) {
+  .wrapper {
+    left: 20px;
+  }
+  .show {
+    width: 80px;
+  }
+}
+
+.doctors h1 {
+  color: #0d6efd;
+  margin-bottom: 30px;
+  font-size: 2.3rem;
+}
+.doctors .banner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  grid-gap: 20px;
+}
+.doctors .banner .card1 {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.doctors .banner .card1 img {
+  width: 270px;
+  height: 270px;
+  border-radius: 100%;
+  margin-bottom: 20px;
+}
+.doctors .banner .card1 h4 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+.doctors .banner .card1 div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 20px;
+}
+.doctors .banner .card1 div p {
+  font-weight: 700;
+}
+.doctors .banner .card1 div p span {
+  font-weight: 500;
+}
+
+@media (max-width: 350px) {
+  .doctors .banner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    grid-gap: 20px;
+  }
+}
+
+.add-doctor-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  padding: 0;
+}
+.add-doctor-form form {
+  width: 100%;
+}
+.add-doctor-form form .first-wrapper {
+  display: flex;
+  gap: 30px;
+}
+.add-doctor-form form .first-wrapper div:first-child {
+  flex: 1;
+}
+.add-doctor-form form .first-wrapper div:first-child img {
+  width: 100%;
+  height: 515px;
+  margin-bottom: 20px;
+}
+.add-doctor-form form .first-wrapper div:first-child input {
+  width: 100%;
+  padding: 10px;
+}
+.add-doctor-form
+  form
+  .first-wrapper
+  div:first-child
+  input:file-selector-button {
+  position: absolute;
+  width: 100%;
+}
+.add-doctor-form form .first-wrapper div:last-child {
+  flex: 2;
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+}
+.add-doctor-form form input,
+.add-doctor-form form select,
+.add-doctor-form form textarea {
+  flex: 1;
+  font-size: 24px;
+  padding: 10px 10px 10px 40px;
+  border-radius: 7px;
+  border: 1px solid gray;
+}
+.add-doctor-form button {
+  padding: 10px 35px;
+  color: #fff;
+  font-weight: 700;
+  width: fit-content;
+  border: none;
+  border-radius: 8px;
+  font-size: 24px;
+  margin-bottom: 30px;
+  background: linear-gradient(140deg, #7b9bf3, #0d6efd);
+  cursor: pointer;
+  transition: 0.3s;
+  margin-left: 10px;
+}
+.add-doctor-form button:hover{
+  transform: scale(1.03);
+}
+@media (max-width: 945px) {
+  .add-doctor-form form .first-wrapper {
+    flex-direction: column;
+  }
+  .add-doctor-form form .first-wrapper div:first-child img {
+    height: auto;
+  }
+  .doctors h1 {
+    margin-top: 35px;
+  }
+}
+input[type="date"]:before {
+  content: attr(placeholder);
+  color: #444;
+  margin-right: 0.5em;
+}
+input[type="time"]:before {
+  content: attr(placeholder);
+  color: #444;
+  margin-right: 0.5em;
+}
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full-screen height */
+  background-color: #f0f0f0; /* Light background */
+}
+
+.loading-spinner h2 {
+  font-size: 1.5rem;
+  color: #555;
+  animation: fade 1.5s infinite;
+}
+
+@keyframes fade {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+.loading-spinner2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px; /* Default height for spinner area */
+  background-color: #f9f9f9; /* Matches the table's background */
+}
+
+.table-container {
+  min-height: 200px; /* Ensures the spinner matches the table height */
+}
+.img-skin img{
+  width: 60px;
+  height: 50px;
+  border-radius: 10px;
+}
+
+@media (max-width: 1210px) {
+  .doctors h1 {
+    margin-top: 35px;
+  }
+}
+/* Container styling */
+.admin-container {
+  max-width: 1200px;
+  margin: auto;
+  background-color: #e5e5e5;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+/* Header styling */
+.admin-container h2 {
+  color: #007bff;
+  
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* Search box styling */
+.search-box {
+  display: flex;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.search-box input {
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+
+.search-box input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Table wrapper */
+.table-wrapper {
+  overflow-x: auto;
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Media Queries for Responsiveness */
+
+/* On small screens, the input and table should adapt to the width */
+@media (max-width: 767px) {
+  /* Adjust container padding */
+  .admin-container {
+    padding: 10px;
+  }
+
+  /* Adjust header font size */
+  .admin-container h2 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  /* Search box should stack vertically on small screens */
+  .search-box {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-box input {
+    width: 100%;
+  }
+
+  /* Make table wrapper full width on small screens */
+  .table-wrapper {
+    padding: 10px;
+  }
+}
+
+/* On medium screens (tablet view) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .search-box {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .search-box input {
+    width: 48%;
+  }
+}
+
+
+
+/* DoctorPatients.css */
+/* Container for patients' list */
+.patients-container {
+  max-width: 1200px;
+  margin:auto;
+  background-color: #e5e5e5;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+}
+
+.patients-container h2 {
+  color: #007bff;
+  
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+
+/* Pagination */
+.pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.page-btn {
+  padding: 10px;
+  background-color: #fff;
+  color: #007bff;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.page-btn:hover,
+.page-btn.active {
+  background-color: #1f7adb;
+  color: #fff;
+}
+
+/* Table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 14px 18px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  background-color: #f4f4f4;
+  color: #333;
+  font-weight: 600;
+}
+
+td {
+  color: #555;
+}
+
+tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* No data message */
+.no-data {
+  text-align: center;
+  font-style: italic;
+  color: #777;
+  padding: 20px;
+}
+
+/* View button style */
+.view-btn {
+  padding: 5px 5px;
+  background-color: #007bff;
+  color: #fff;
+  width: 95px;
+
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.view-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Search bar styling */
+.search-container {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 12px;
+}
+
+.search-container input {
+  padding: 10px 14px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  width: 100%;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.search-container input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.search-container button {
+  padding: 10px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.search-container button:hover {
+  background-color: #0056b3;
+}
+
+/* Modal overlay styles */
+.modal-overlay1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Modal content styling */
+.modal-content1 {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  width: 400px;
+  max-height: 80%;
+  overflow-y: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.modal-content1 h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #333;
+}
+.modal-content1 img {
+  width: 40px;
+  height: 40px;
+  border-radius: 7%;
+  margin-left: 10px;
+}
+
+/* Close button styling */
+.close-btn {
+  margin-left: 90%;
+
+}
+
+
+/* Modal content details styling */
+.modal-content1 p {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+.modal-content1 p strong {
+  font-weight: 600;
+  color: #333;
+}
+
+/* Adjusting the modal button appearance */
+.modal-content1 button {
+  padding: 8px 14px;
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.modal-content1 button:hover {
+  background-color: #007bff;
+}
+.delete-btn{
+  padding: 5px 5px;
+  width: 95px;
+  background-color: #dc3545;
+  color: #fff;
+  font-size: 14px;
+  margin-left: 4px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}
+
+@media (max-width: 928px) {
+  .delete-btn{
+    margin-left: 0px;
+    margin-top: 3px;
+  }
+  .patients-container h2 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+}

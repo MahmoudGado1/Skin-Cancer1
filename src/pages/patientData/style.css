@@ -1,0 +1,206 @@
+.doctor-patients-container {
+  max-width: 1200px;
+  margin: 90px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.patients-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  overflow-x: auto;
+}
+
+.table-header {
+  background-color: #f7f7f7;
+  color: #333;
+  font-weight: bold;
+  padding: 12px;
+  border-bottom: 2px solid #ddd;
+  text-align: left;
+}
+
+.patient-row:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.patient-info {
+  padding: 12px;
+  vertical-align: top;
+  font-size: 15px;
+  color: #444;
+}
+
+.patient-image {
+  padding: 12px;
+}
+
+.patient-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.view-images-btn,
+.cancel-btn,
+.delete-btn {
+  font-size: 14px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border: none;
+}
+
+.view-images-btn {
+  background-color: #007BFF;
+  color: #fff;
+}
+
+.view-images-btn:hover {
+  background-color: #0056b3;
+}
+
+.cancel-btn {
+  background-color: #ccc;
+  color: #333;
+}
+
+.delete-btn {
+  background-color: #e74c3c;
+  color: white;
+  margin: 0 4px;
+}
+
+.delete-btn:hover {
+  background-color: #c0392b;
+}
+
+.no-patients {
+  text-align: center;
+  padding: 20px;
+  font-style: italic;
+  color: #777;
+}
+
+.pagination {
+  text-align: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.page-btn {
+  background-color: #eee;
+  color: #333;
+  padding: 10px 14px;
+  margin: 4px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.page-btn:hover {
+  background-color: #ddd;
+}
+
+.page-btn.active {
+  background-color: #007BFF;
+  color: white;
+  font-weight: bold;
+}
+
+/* ✅ Responsive adjustments */
+@media (max-width: 768px) {
+  .doctor-patients-container{
+    margin: 100px 10px;
+  }
+  .title {
+    font-size: 22px;
+  }
+
+  .search-input {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  .patient-img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .view-images-btn,
+  .cancel-btn,
+  .delete-btn {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  .table-header,
+  .patient-info,
+  .patient-image {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .patients-table,
+  .patients-table thead,
+  .patients-table tbody,
+  .patients-table th,
+  .patients-table td,
+  .patients-table tr {
+    display: block;
+    width: 100%;
+  }
+
+  .patients-table thead {
+    display: none;
+  }
+
+  .patient-row {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .patient-info {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .patient-info::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: #666;
+  }
+  .bt{
+    margin-left: 20%;
+    display: flex;
+    align-items: center
+  }
+}

@@ -1,5 +1,5 @@
 
-# 🧠 Skin Cancer Detection & Healthcare Management System
+# 🧠 126-Skin Cancer Detection & Healthcare Management System
 
 A full-stack web application that enables doctors to upload skin lesion images, receive AI-powered diagnostic results, and manage patient records. Includes secure role-based authentication, Admin/Doctor dashboards, and a pre-trained ResNet model for classification.
 
